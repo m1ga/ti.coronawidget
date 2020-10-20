@@ -1,5 +1,21 @@
 # Appclerator Titanium Covid-19 widget for Android
-<img src="preview.png"/>
+
+<p>
+<img src="preview0.jpg"/><br/>
+<small><i>Widget</i></small>
+</p>
+
+<p>
+<img src="preview1.png"/><br/>
+<small><i>Widget selection</i></small>
+</p>
+
+<p>
+<img src="preview2.png"/><br/>
+<small><i>App settings</i></small>
+</p>
+
+<hr/>
 
 ## Content
 * Appcelerator Titanum app (<a href="/app">app folder</a>)

@@ -1,12 +1,13 @@
 ".container": {
 	backgroundColor:"white",
-	layout: 'vertical',
 	exitOnClose: false
 }
 
-"#tf": {
+
+
+".content":{
 	width: 300,
-	borderColor: "#000",
-	borderWidth: 1,
-	color: "#000"
+	layout: 'vertical',
+	height: Ti.UI.SIZE,
+	top: 10
 }

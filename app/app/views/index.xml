@@ -1,5 +1,21 @@
 <Alloy>
 	<Window class="container" onOpen="onOpen">
-		<Button title="Force Update" onClick="onClickButton"></Button>
+		<ScrollView class="content">
+			<Label text="Town 1"/>
+			<TextField id="tf_town1" onChange="onChange"/>
+			<Label text="Lat"/>
+			<TextField id="tf_lat1" onChange="onChange"/>
+			<Label text="Lon"/>
+			<TextField id="tf_lon1" onChange="onChange"/>
+
+			<Label text="Town 2" top="10"/>
+			<TextField id="tf_town2" onChange="onChange"/>
+			<Label text="Lat"/>
+			<TextField id="tf_lat2" onChange="onChange"/>
+			<Label text="Lon"/>
+			<TextField id="tf_lon2" onChange="onChange"/>
+
+			<Button title="Force Update" onClick="onClickButton"></Button>
+		</ScrollView>
 	</Window>
 </Alloy>
