@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container" onOpen="onOpen">
+		<Button title="Force Update" onClick="onClickButton"></Button>
+	</Window>
+</Alloy>

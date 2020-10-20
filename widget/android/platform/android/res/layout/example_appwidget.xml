@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:id="@+id/widget"
+    android:background="#66000000">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+			android:id="@+id/town1"
+            android:layout_width="match_parent"
+            android:padding="3dip"
+            android:text="-"
+            android:textColor="#fff"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/numValue1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dip"
+            android:text="-"
+            android:textColor="#fff"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+			android:id="@+id/town2"
+            android:layout_width="match_parent"
+            android:gravity="right"
+            android:padding="3dip"
+            android:text="-"
+            android:textColor="#fff"
+            android:layout_height="wrap_content"  />
+
+        <TextView
+            android:id="@+id/numValue2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:padding="3dip"
+            android:text="-"
+            android:textColor="#fff"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
