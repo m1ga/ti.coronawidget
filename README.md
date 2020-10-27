@@ -1,29 +1,34 @@
-# Appclerator Titanium Covid-19 widget for Android
+# 😷 Appclerator Titanium Covid-19 widget for Android
 
-<p>
-<img src="preview0.jpg"/><br/>
+<img src="app.jpg" alt="app"/>
+
+<table>
+<tr>
+<td>
+<img src="preview0.jpg" alt="preview"/><br/>
 <small><i>Widget</i></small>
-</p>
-
-<p>
-<img src="preview1.png"/><br/>
+</td>
+<td>
+<img src="preview1.png" alt="preview"/><br/>
 <small><i>Widget selection</i></small>
-</p>
+</td>
 
-<p>
-<img src="preview2.png"/><br/>
+<td>
+<img src="preview2.png" alt="preview"/><br/>
 <small><i>App settings</i></small>
-</p>
+</td>
+</tr>
+</table>
 
 <hr/>
 
-## Content
-* Appcelerator Titanum app (<a href="/app">app folder</a>)
-* Appcelerator Titanum Android Widget (<a href="/widget">widget folder</a>)
+## 📋 Content
+* 📱 Appcelerator Titanum app (<a href="/app">app folder</a>)
+* 📱 Appcelerator Titanum Android Widget (<a href="/widget">widget folder</a>)
 
 The widget is a basic Android Home widget that will read Ti.App.Properties and writes them into XML fields. The app will run a foreground service (the icon in the top left corner) and collects data every 30mins. This data is forwarded to the widget.
 
-## Use
+## 📲 Use
 
 APK is available in the <a href="https://github.com/m1ga/ti.coronawidget/releases/">release section</a> (no store version yet).
 * download APK
@@ -36,7 +41,7 @@ APK is available in the <a href="https://github.com/m1ga/ti.coronawidget/release
 There are still some bugs and features that could be implemented:
 * if the icon is gone you have to restart the app to get new updates. Sometimes the system will kill the background process
 
-## Build
+## 🛠 Build
 ### Widget
 
 go to the `widget/android/` folder and run
@@ -50,5 +55,5 @@ appc new --import --no-services
 appc ti build -p android
 ```
 
-## Attention
+## 🚨 Attention
 _Android only!_ For iOS you can use Scriptable with https://gist.github.com/kevinkub/46caebfebc7e26be63403a7f0587f664
