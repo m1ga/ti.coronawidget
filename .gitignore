@@ -29,3 +29,5 @@ Thumbs.db
 /app/android/manifest.bak
 /app/android/.classpath
 /app/android/.project
+*.apk
+*.aab
