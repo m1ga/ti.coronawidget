@@ -1,0 +1,10 @@
+{
+    "windowBackgroundColor": {
+        "dark": "#212121",
+        "light": "#ffffff"
+    },
+    "text": {
+        "dark": "#ffffff",
+        "light": "#212121"
+    }
+}

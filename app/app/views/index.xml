@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" onOpen="onOpen">
+	<Window onOpen="onOpen">
 		<ScrollView class="content">
 			<Label text="Town 1"/>
 			<TextField id="tf_town1" onChange="onChange"/>

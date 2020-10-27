@@ -1,11 +1,8 @@
-".container": {
-	backgroundColor:"white",
+"Window" : {
+	backgroundColor: "windowBackgroundColor",
 	exitOnClose: false
 }
-
-
-
-".content":{
+".content" : {
 	width: 300,
 	layout: 'vertical',
 	height: Ti.UI.SIZE,

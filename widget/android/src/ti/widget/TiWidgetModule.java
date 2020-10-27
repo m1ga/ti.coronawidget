@@ -29,14 +29,21 @@ public class TiWidgetModule extends KrollModule
 
 	@Kroll.method
 	public void updateWidgets() {
+		// 2x1 widget
 		Context context = TiApplication.getAppCurrentActivity();
 		int[] ids = AppWidgetManager.getInstance(context.getApplicationContext())
-				.getAppWidgetIds(new ComponentName(context.getApplicationContext(), SimpleWidgetProvider.class));
-
-		Intent intent = new Intent(context, SimpleWidgetProvider.class);
+				.getAppWidgetIds(new ComponentName(context.getApplicationContext(), WidgetProvider2x1.class));
+		Intent intent = new Intent(context, WidgetProvider2x1.class);
 		intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
 		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
+		context.sendBroadcast(intent);
 
+		// 1x1 widget
+		ids = AppWidgetManager.getInstance(context.getApplicationContext())
+				.getAppWidgetIds(new ComponentName(context.getApplicationContext(), WidgetProvider1x1.class));
+		intent = new Intent(context, WidgetProvider1x1.class);
+		intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
 		context.sendBroadcast(intent);
 	}
 }

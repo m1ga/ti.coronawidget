@@ -34,7 +34,6 @@ APK is available in the <a href="https://github.com/m1ga/ti.coronawidget/release
 
 **Note**
 There are still some bugs and features that could be implemented:
-* currently no "1 place" widget
 * if the icon is gone you have to restart the app to get new updates. Sometimes the system will kill the background process
 
 ## Build

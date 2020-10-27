@@ -1,12 +1,12 @@
 "TextField": {
 	width: 300,
-	borderColor: "#000",
+	borderColor: "text",
 	borderWidth: 1,
-	color: "#000"
+	color: "text"
 }
 
 'Label': {
-	color: '#000',
+	color: 'text',
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	left: 0
