@@ -23,6 +23,20 @@
 
 The widget is a basic Android Home widget that will read Ti.App.Properties and writes them into XML fields. The app will run a foreground service (the icon in the top left corner) and collects data every 30mins. This data is forwarded to the widget.
 
+## Use
+
+APK is available in the <a href="https://github.com/m1ga/ti.coronawidget/releases/">release section</a> (no store version yet).
+* download APK
+* install APK
+* add the Widget to your home screen
+* start the app
+* set places and press "Force update"
+
+**Note**
+There are still some bugs and features that could be implemented:
+* currently no "1 place" widget
+* if the icon is gone you have to restart the app to get new updates. Sometimes the system will kill the background process
+
 ## Build
 ### Widget
 

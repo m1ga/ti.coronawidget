@@ -1,7 +1,7 @@
 .DS_Store
-/Resources
-/platform
-/i18n
+/app/Resources
+/app/platform
+/app/i18n
 build.log
 build
 npm-debug.log
