@@ -3,7 +3,7 @@
 	exitOnClose: false
 }
 ".content" : {
-	width: 300,
+	width: 200,
 	layout: 'vertical',
 	height: Ti.UI.SIZE,
 	top: 10

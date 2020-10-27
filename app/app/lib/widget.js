@@ -9,23 +9,25 @@ var dataValue1 = t.value1;
 var dataValue2 = t.value2;
 var town1 = Ti.App.Properties.getString("town1", "-");
 var town2 = Ti.App.Properties.getString("town2", "-");
+var icon = Ti.App.Properties.getString("icon", "🦠");
 
 function getData() {
 
 	if (Ti.Network.online) {
 		town1 = Ti.App.Properties.getString("town1", "-");
 		town2 = Ti.App.Properties.getString("town2", "-");
+		icon = Ti.App.Properties.getString("icon", "🦠");
 
 		var xhr = Ti.Network.createHTTPClient({
 			onload: function(e) {
 				var json = JSON.parse(this.responseText);
-				dataValue1 = parseFloat(json.features[0].attributes.cases7_per_100k).toFixed(1);
+				if (json.features && json.features.length > 0) dataValue1 = parseFloat(json.features[0].attributes.cases7_per_100k).toFixed(1);
 
 				Ti.App.Properties.setObject("widgetData", {
 					town1: town1,
 					town2: town2,
-					value1: "🦠 " + dataValue1,
-					value2: "🦠 " + dataValue2
+					value1: icon + dataValue1,
+					value2: icon + dataValue2
 				})
 				widgets.updateWidgets();
 			},
@@ -41,13 +43,13 @@ function getData() {
 		var xhr = Ti.Network.createHTTPClient({
 			onload: function(e) {
 				var json = JSON.parse(this.responseText);
-				dataValue2 = parseFloat(json.features[0].attributes.cases7_per_100k).toFixed(1);
+				if (json.features && json.features.length > 0) dataValue2 = parseFloat(json.features[0].attributes.cases7_per_100k).toFixed(1);
 
 				Ti.App.Properties.setObject("widgetData", {
 					town1: town1,
 					town2: town2,
-					value1: "🦠 " + dataValue1,
-					value2: "🦠 " + dataValue2
+					value1: icon + dataValue1,
+					value2: icon + dataValue2
 				})
 				widgets.updateWidgets();
 			},

@@ -1,13 +1,21 @@
-"TextField": {
-	width: 300,
+"TextField" : {
+	width: 200,
+	bottom: 10,
 	borderColor: "text",
 	borderWidth: 1,
-	color: "text"
+	color: "text",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	backgroundColor: "transparent",
+	font: {
+		fontSize: 14
+	}
 }
-
-'Label': {
+'Label' : {
 	color: 'text',
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
-	left: 0
+	left: 0,
+	font: {
+		fontSize: 14
+	}
 }
