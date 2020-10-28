@@ -1,6 +1,9 @@
-# 😷 Appclerator Titanium Covid-19 widget for Android
+# 😷 Appcelerator Titanium Covid-19 widget for Android
 
 <img src="app.jpg" alt="app"/>
+
+<br/>
+<span class="badge-buymeacoffee"><a href="https://www.buymeacoffee.com/miga" title="donate"><img src="https://img.shields.io/badge/buy%20me%20a%20coke-donate-orange.svg" alt="Buy Me A Coke donate button" /></a></span>
 
 <table>
 <tr>
@@ -23,6 +26,9 @@
 <hr/>
 
 ## 📋 Content
+
+<i><b>This Widget and app started as a proof-of-concept how to create such a widget with Appcelerator Titanium! It is not a final app (yet) 😉 It works but it can be improved!</b></i>
+
 * 📱 Appcelerator Titanum app (<a href="/app">app folder</a>)
 * 📱 Appcelerator Titanum Android Widget (<a href="/widget">widget folder</a>)
 
@@ -57,3 +63,7 @@ appc ti build -p android
 
 ## 🚨 Attention
 _Android only!_ For iOS you can use Scriptable with https://gist.github.com/kevinkub/46caebfebc7e26be63403a7f0587f664
+
+
+## Author
+* Michael Gangolf (https://migaweb.de) <span class="badge-buymeacoffee"><a href="https://www.buymeacoffee.com/miga" title="donate"><img src="https://img.shields.io/badge/buy%20me%20a%20coke-donate-orange.svg" alt="Buy Me A Coke donate button" /></a></span>
