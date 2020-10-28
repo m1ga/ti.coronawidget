@@ -1,4 +1,4 @@
-# 😷 Appclerator Titanium Covid-19 widget for Android
+# 😷 Appcelerator Titanium Covid-19 widget for Android
 
 <img src="app.jpg" alt="app"/>
 
