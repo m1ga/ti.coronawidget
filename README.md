@@ -62,7 +62,7 @@ appc ti build -p android
 ```
 
 ## 🚨 Attention
-_Android only!_ For iOS you can use Scriptable with https://gist.github.com/kevinkub/46caebfebc7e26be63403a7f0587f664
+_Android only!_ For iOS you can use Scriptable with https://gist.github.com/kevinkub/46caebfebc7e26be63403a7f0587f664 by @kevinkub (https://github.com/kevinkub)
 
 
 ## Author
