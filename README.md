@@ -36,8 +36,9 @@ The widget is a basic Android Home widget that will read Ti.App.Properties and w
 
 ## 📲 How to install the app
 
+The app is available at <a href="https://play.google.com/store/apps/details?id=com.miga.coronawidget">Google Play</a> or you can install it from here:
+
 <img src="img/qrcode.png" width="200"/>
-<br/>
 <br/>
 Scan the QR code or go to the <a href="https://github.com/m1ga/ti.coronawidget/releases/">release section</a>. Then click on the latest release and download the APK (under assets)
 
@@ -48,7 +49,11 @@ Scan the QR code or go to the <a href="https://github.com/m1ga/ti.coronawidget/r
 * set places and press "Force update"
 
 **Note**
-_No Play Store or F-Droid version yet._ There are still some bugs and features that could be implemented:
+_No F-Droid version yet._
+
+## Known issues
+
+There are still some bugs and features that could be implemented:
 * if the icon is gone you have to restart the app to get new updates. Sometimes the system will kill the background process
 
 ## 🛠 Build
