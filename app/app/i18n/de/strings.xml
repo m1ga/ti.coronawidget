@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="save">Speichern</string>
+	<string name="update">man. Update</string>
+	<string name="title1">Titel der ersten Box</string>
+	<string name="title2">Titel der zweiten Box</string>
+	<string name="intro">Die App ruft die Landkreisdaten der RKI Schnittstelle ab.</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="save">save</string>
+	<string name="update">force update</string>
+	<string name="title1">Title of the first box</string>
+	<string name="title2">Title of the second box</string>
+	<string name="intro">The app is fetching the distric data of the RKI API.</string>
+</resources>

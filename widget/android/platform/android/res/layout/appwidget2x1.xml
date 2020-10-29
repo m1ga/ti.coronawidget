@@ -32,6 +32,15 @@
             android:textSize="22sp"
             android:textStyle="bold" />
 
+		<TextView
+			android:id="@+id/updateTime1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="3dip"
+			android:text="-"
+			android:textColor="#fff"
+			android:textSize="9sp" />
+
     </LinearLayout>
 
 	<LinearLayout
@@ -59,6 +68,16 @@
 			android:textColor="#fff"
 			android:textSize="22sp"
 			android:textStyle="bold" />
+
+		<TextView
+			android:id="@+id/updateTime2"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="3dip"
+			android:text="-"
+			android:gravity="right"
+			android:textColor="#fff"
+			android:textSize="9sp" />
 
 
 	</LinearLayout>

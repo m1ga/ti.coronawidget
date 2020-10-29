@@ -19,6 +19,8 @@ Thumbs.db
 /app/android/dist
 /app/android/java-sources.txt
 /app/android/build.properties
+/widget/android/local.properties
+/widget/android/.idea
 /app/ios/ti.animation.xcodeproj/project.xcworkspace/xcuserdata/*
 .DS_Store
 /app/ios/Cartfile.resolved

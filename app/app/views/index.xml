@@ -1,24 +1,41 @@
 <Alloy>
 	<Window onOpen="onOpen">
+		<Label textid="intro" id="lbl_intro"/>
+
 		<ScrollView class="content">
-			<Label text="Town 1"/>
-			<TextField id="tf_town1" onChange="onChange"/>
-			<Label text="Lat"/>
-			<TextField id="tf_lat1" onChange="onChange"/>
-			<Label text="Lon"/>
-			<TextField id="tf_lon1" onChange="onChange"/>
+			<Label textid="title1"/>
+			<TextField id="tf_town1"/>
 
-			<Label text="Town 2" top="30"/>
-			<TextField id="tf_town2" onChange="onChange"/>
-			<Label text="Lat"/>
-			<TextField id="tf_lat2" onChange="onChange"/>
-			<Label text="Lon"/>
-			<TextField id="tf_lon2" onChange="onChange"/>
+			<View class="coords">
+				<View class="box box_left">
+					<Label text="Lat"/>
+					<TextField id="tf_lat1"/>
+				</View>
+				<View class="box">
+					<Label text="Lon"/>
+					<TextField id="tf_lon1"/>
+				</View>
+			</View>
 
-			<Label text="Virus icon" top="30"/>
-			<TextField id="tf_icon" onChange="onChange"/>
+			<Label textid="title2" top="30"/>
+			<TextField id="tf_town2"/>
+			<View class="coords">
+				<View class="box box_left">
+					<Label text="Lat"/>
+					<TextField id="tf_lat2"/>
+				</View>
+				<View class="box">
+					<Label text="Lon"/>
+					<TextField id="tf_lon2"/>
+				</View>
+			</View>
+			<Label text="Virus icon" id="lbl_virus"/>
+			<TextField id="tf_icon"/>
 
-			<Button title="Force Update" onClick="onClickButton"></Button>
+			<View id="view_button_row">
+				<Button id="btn_save" titleid="save" onClick="onClickSave"></Button>
+				<Button id="btn_force" titleid="update" onClick="onClickUpdate"></Button>
+			</View>
 		</ScrollView>
 	</Window>
 </Alloy>

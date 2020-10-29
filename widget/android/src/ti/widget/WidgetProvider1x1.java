@@ -21,12 +21,14 @@ public class WidgetProvider1x1 extends AppWidgetProvider {
         // get text from app/shared preferences
         String value1 = "-";
 		String town1 = "-";
+		String updateTime1 = "-";
         SharedPreferences sharedPref = context.getSharedPreferences("titanium", Context.MODE_PRIVATE);
         String appString = sharedPref.getString("widgetData", "{\"text\":''}");
         try {
             JSONObject appData = new JSONObject(appString);
             value1 = appData.getString("value1");
 			town1 = appData.getString("town1");
+			updateTime1 = appData.getString("updateTime1");
         } catch (JSONException e) {
 
         }
@@ -41,6 +43,7 @@ public class WidgetProvider1x1 extends AppWidgetProvider {
 			// set text to textfield
             remoteViews1x1.setTextViewText(R.id.numValue1, value1);
             remoteViews1x1.setTextViewText(R.id.town1, town1);
+            remoteViews1x1.setTextViewText(R.id.updateTime1, updateTime1);
 
             // update ui
             Intent intent = new Intent(context, WidgetProvider1x1.class);
