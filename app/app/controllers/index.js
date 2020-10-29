@@ -50,4 +50,5 @@ function onClickSave(e){
 	if ($.tf_lon2.value != "") Ti.App.Properties.setString("lon2", $.tf_lon2.value);
 
 	Ti.App.Properties.setString("icon", $.tf_icon.value);
+	require("/widget").updateData();
 }
