@@ -1,6 +1,6 @@
 # 😷 Appcelerator Titanium Covid-19 widget for Android
 
-<img src="app.jpg" alt="app"/>
+<img src="img/app.jpg" alt="app"/>
 
 <br/>
 <span class="badge-buymeacoffee"><a href="https://www.buymeacoffee.com/miga" title="donate"><img src="https://img.shields.io/badge/buy%20me%20a%20coke-donate-orange.svg" alt="Buy Me A Coke donate button" /></a></span>
@@ -8,16 +8,16 @@
 <table>
 <tr>
 <td>
-<img src="preview0.jpg" alt="preview"/><br/>
+<img src="img/preview0.jpg" alt="preview"/><br/>
 <small><i>Widget</i></small>
 </td>
 <td>
-<img src="preview1.png" alt="preview"/><br/>
+<img src="img/preview1.png" alt="preview"/><br/>
 <small><i>Widget selection</i></small>
 </td>
 
 <td>
-<img src="preview2.png" alt="preview"/><br/>
+<img src="img/preview2.png" alt="preview"/><br/>
 <small><i>App settings</i></small>
 </td>
 </tr>
@@ -34,9 +34,13 @@
 
 The widget is a basic Android Home widget that will read Ti.App.Properties and writes them into XML fields. The app will run a foreground service (the icon in the top left corner) and collects data every 30mins. This data is forwarded to the widget.
 
-## 📲 Use
+## 📲 How to install the app
 
-APK is available in the <a href="https://github.com/m1ga/ti.coronawidget/releases/">release section</a> (no store version yet).
+<img src="img/qrcode.png" width="200"/>
+<br/>
+<br/>
+Scan the QR code or go to the <a href="https://github.com/m1ga/ti.coronawidget/releases/">release section</a>. Then click on the latest release and download the APK (under assets)
+
 * download APK
 * install APK
 * add the Widget to your home screen
@@ -44,10 +48,13 @@ APK is available in the <a href="https://github.com/m1ga/ti.coronawidget/release
 * set places and press "Force update"
 
 **Note**
-There are still some bugs and features that could be implemented:
+_No Play Store or F-Droid version yet._ There are still some bugs and features that could be implemented:
 * if the icon is gone you have to restart the app to get new updates. Sometimes the system will kill the background process
 
 ## 🛠 Build
+
+The App is created with <a href="https://www.appcelerator.com/mobile-app-development-products/">Appcelerator Titanium</a>. In order to build the app you will need to install the toolchain first. Have a look at my <a href="https://github.com/m1ga/from_zero_to_app/blob/master/installation.md">installation tutorial</a> from <a href="https://github.com/m1ga/from_zero_to_app">From zero to app</a> or at the official <a href="https://www.appcelerator.com/">Appcelerator</a> page.
+
 ### Widget
 
 go to the `widget/android/` folder and run
