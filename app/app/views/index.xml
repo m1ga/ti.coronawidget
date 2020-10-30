@@ -3,30 +3,36 @@
 		<Label textid="intro" id="lbl_intro"/>
 
 		<ScrollView class="content">
-			<Label textid="title1"/>
+			<Label class="title" textid="preview"/>
+			<View id="view_preview">
+				<Label id="lbl_preview1"/>
+				<Label id="lbl_preview2"/>
+			</View>
+
+			<Label class="title" textid="title1"/>
 			<TextField id="tf_town1"/>
 
 			<View class="coords">
 				<View class="box box_left">
-					<Label text="Lat"/>
-					<TextField id="tf_lat1"/>
+					<Label class="title" text="Lat"/>
+					<TextField class="tf_number" id="tf_lat1"/>
 				</View>
 				<View class="box">
-					<Label text="Lon"/>
-					<TextField id="tf_lon1"/>
+					<Label class="title" text="Lon"/>
+					<TextField class="tf_number" id="tf_lon1"/>
 				</View>
 			</View>
 
-			<Label textid="title2" top="30"/>
+			<Label class="title" textid="title2" top="30"/>
 			<TextField id="tf_town2"/>
 			<View class="coords">
 				<View class="box box_left">
-					<Label text="Lat"/>
-					<TextField id="tf_lat2"/>
+					<Label class="title" text="Lat"/>
+					<TextField class="tf_number" id="tf_lat2"/>
 				</View>
 				<View class="box">
-					<Label text="Lon"/>
-					<TextField id="tf_lon2"/>
+					<Label class="title" text="Lon"/>
+					<TextField class="tf_number" id="tf_lon2"/>
 				</View>
 			</View>
 			<Label text="Virus icon" id="lbl_virus"/>
@@ -37,5 +43,8 @@
 				<Button id="btn_force" titleid="update" onClick="onClickUpdate"></Button>
 			</View>
 		</ScrollView>
+		<View id="view_loading">
+			<ActivityIndicator id="activity"/>
+		</View>
 	</Window>
 </Alloy>

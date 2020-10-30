@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+	<string name="preview">Preview</string>
 	<string name="save">save</string>
 	<string name="update">force update</string>
 	<string name="title1">Title of the first box</string>

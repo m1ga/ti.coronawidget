@@ -36,7 +36,7 @@ The widget is a basic Android Home widget that will read Ti.App.Properties and w
 
 ## 📲 How to install the app
 
-The app is available at <a href="https://play.google.com/store/apps/details?id=com.miga.coronawidget">Google Play</a> or you can install it from here:
+You can install it from here:
 
 <img src="img/qrcode.png" width="200"/>
 <br/>

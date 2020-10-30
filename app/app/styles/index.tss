@@ -1,13 +1,12 @@
 "Window" : {
 	backgroundColor: "windowBackgroundColor",
-	exitOnClose: false,
-	layout: "vertical"
+	exitOnClose: false
 }
 ".content" : {
 	width: 260,
 	layout: "vertical",
 	height: Ti.UI.SIZE,
-	top: 20
+	top: 40
 }
 "#view_button_row" : {
 	height: Ti.UI.SIZE,
@@ -35,14 +34,41 @@
 	width: 70
 }
 "#lbl_intro" : {
+	top: 0,
 	left: 10,
 	right: 10,
 	width: Ti.UI.FILL,
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
-
-"#lbl_virus": {
+"#lbl_virus" : {
 	top: 30,
 	width: Ti.UI.FILL,
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+"#view_preview" : {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	layout: "vertical",
+	bottom: 20
+}
+".title" : {
+	font: {
+		fontWeight: "bold"
+	}
+}
+".tf_number" : {
+	keyboardType: Ti.UI.KEYBOARD_TYPE_PHONE_PAD
+}
+
+"#view_loading": {
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor: "rgba(0,0,0,0.25)",
+	visible: false
+}
+
+"#view_content": {
+	height: Ti.UI.SIZE,
+	width: Ti.UI.FILL,
+	layout:"vertical"
 }

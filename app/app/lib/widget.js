@@ -38,19 +38,26 @@ function downloadData(data) {
 					widgetData.value2 = icon + parseFloat(json.features[0].attributes.cases7_per_100k).toFixed(1);
 					widgetData.updateTime2 = "Stand: " + json.features[0].attributes.last_update;
 				}
-				Ti.App.Properties.setObject("widgetData", widgetData)
+				Ti.App.Properties.setObject("widgetData", widgetData);
+				if (data.callback) {
+					data.callback();
+				}
 			}
 
 			widgets.updateWidgets();
 		},
-		onerror: function(e) {},
+		onerror: function(e) {
+			if (data.callback) {
+				data.callback();
+			}
+		},
 		timeout: 5000
 	});
 	xhr.open('GET', locationUrl);
 	xhr.send();
 }
 
-function getData() {
+function getData(clb) {
 
 	if (Ti.Network.online) {
 		town1 = Ti.App.Properties.getString("town1", "-");
@@ -60,12 +67,14 @@ function getData() {
 		downloadData({
 			lon: Ti.App.Properties.getString("lon1", "13.404954"),
 			lat: Ti.App.Properties.getString("lat1", "52.520008"),
-			target: 1
+			target: 1,
+			callback: clb
 		});
 		downloadData({
 			lon: Ti.App.Properties.getString("lon2", "13.404954"),
 			lat: Ti.App.Properties.getString("lat2", "52.520008"),
-			target: 2
+			target: 2,
+			callback: clb
 		});
 	}
 }
