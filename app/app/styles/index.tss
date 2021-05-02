@@ -6,16 +6,17 @@
 	width: 260,
 	layout: "vertical",
 	height: Ti.UI.SIZE,
-	top: 40
+	top: 40,
+	scrollType: "vertical"
 }
 "#view_button_row" : {
-	height: Ti.UI.SIZE,
-	width: Ti.UI.SIZE,
-	layout: "horizontal",
+	height: 100,
+	width: Ti.UI.FILL,
 	top: 10
 }
 "#btn_save" : {
-	right: 10
+	left: 0,
+	top: 0
 }
 ".coords" : {
 	width: Ti.UI.FILL,
@@ -59,16 +60,21 @@
 ".tf_number" : {
 	keyboardType: Ti.UI.KEYBOARD_TYPE_PHONE_PAD
 }
-
-"#view_loading": {
+"#view_loading" : {
 	height: Ti.UI.FILL,
 	width: Ti.UI.FILL,
 	backgroundColor: "rgba(0,0,0,0.25)",
 	visible: false
 }
-
-"#view_content": {
+"#view_content" : {
 	height: Ti.UI.SIZE,
 	width: Ti.UI.FILL,
-	layout:"vertical"
+	layout: "vertical"
+}
+"#btn_close" : {
+	bottom: 0
+}
+"#btn_force" : {
+	top: 0,
+	right: 0
 }

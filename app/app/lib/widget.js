@@ -22,7 +22,7 @@ function downloadData(data) {
 	var lat = data.lat;
 	var dTarget = data.target;
 
-	const outputFields = 'GEN,RS,EWZ,EWZ_BL,BL_ID,cases,cases_per_100k,cases7_per_100k,cases7_bl_per_100k,last_update,BL';
+	const outputFields = 'cases7_per_100k,last_update';
 	const locationUrl = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=1%3D1&outFields=" + outputFields + "&geometry=" + lon + "%2C" + lat + "&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelWithin&returnGeometry=false&outSR=4326&f=json"
 
 	var xhr = Ti.Network.createHTTPClient({
@@ -32,11 +32,11 @@ function downloadData(data) {
 				if (dTarget == 1) {
 					widgetData.town1 = town1;
 					widgetData.value1 = icon + parseFloat(json.features[0].attributes.cases7_per_100k).toFixed(1);
-					widgetData.updateTime1 = "Stand: " + json.features[0].attributes.last_update;
+					widgetData.updateTime1 = "Stand: " + json.features[0].attributes.last_update.split(", ")[0];
 				} else {
 					widgetData.town2 = town2;
 					widgetData.value2 = icon + parseFloat(json.features[0].attributes.cases7_per_100k).toFixed(1);
-					widgetData.updateTime2 = "Stand: " + json.features[0].attributes.last_update;
+					widgetData.updateTime2 = "Stand: " + json.features[0].attributes.last_update.split(", ")[0];
 				}
 				Ti.App.Properties.setObject("widgetData", widgetData);
 				if (data.callback) {
@@ -51,6 +51,24 @@ function downloadData(data) {
 				data.callback();
 			}
 		},
+		timeout: 5000
+	});
+	xhr.open('GET', locationUrl);
+	xhr.send();
+}
+
+function downloadVaccinationData() {
+	const locationUrl = "https://rki-vaccination-data.vercel.app/api"
+
+	var xhr = Ti.Network.createHTTPClient({
+		onload: function(e) {
+			var json = JSON.parse(this.responseText);
+			widgetData.vaccinationOnce = "1. Impf: " + parseFloat(json.quote).toFixed(1) + "%";
+			widgetData.vaccinationTwice = "2. Impf: " + (parseFloat(json["2nd_vaccination"].vaccinated) / 83703925 * 100).toFixed(1) + "%";
+
+			widgets.updateWidgets();
+		},
+		onerror: function(e) {},
 		timeout: 5000
 	});
 	xhr.open('GET', locationUrl);
@@ -76,6 +94,7 @@ function getData(clb) {
 			target: 2,
 			callback: clb
 		});
+		downloadVaccinationData();
 	}
 }
 

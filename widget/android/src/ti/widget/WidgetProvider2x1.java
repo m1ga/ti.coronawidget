@@ -8,11 +8,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.widget.RemoteViews;
 
+import org.appcelerator.titanium.TiApplication;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class WidgetProvider2x1 extends AppWidgetProvider {
-
 
 	@Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -25,6 +25,8 @@ public class WidgetProvider2x1 extends AppWidgetProvider {
         String town2 = "-";
         String updateTime1 = "-";
         String updateTime2 = "-";
+        String vaccinationOnce = "-";
+        String vaccinationTwice = "-";
         SharedPreferences sharedPref = context.getSharedPreferences("titanium", Context.MODE_PRIVATE);
         String appString = sharedPref.getString("widgetData", "{\"text\":''}");
         try {
@@ -35,6 +37,8 @@ public class WidgetProvider2x1 extends AppWidgetProvider {
             town2 = appData.getString("town2");
             updateTime1 = appData.getString("updateTime1");
             updateTime2 = appData.getString("updateTime2");
+            vaccinationOnce = appData.getString("vaccinationOnce");
+            vaccinationTwice = appData.getString("vaccinationTwice");
         } catch (JSONException e) {
 
         }
@@ -56,11 +60,20 @@ public class WidgetProvider2x1 extends AppWidgetProvider {
             remoteViews.setTextViewText(R.id.updateTime1, updateTime1);
             remoteViews.setTextViewText(R.id.updateTime2, updateTime2);
 
+            remoteViews.setTextViewText(R.id.vaccinationOnce, vaccinationOnce);
+            remoteViews.setTextViewText(R.id.vaccinationTwice, vaccinationTwice);
+
             // update ui
             Intent intent = new Intent(context, WidgetProvider2x1.class);
             intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            // start app on click
+            Intent intent2 = new Intent(context, TiApplication.getAppRootOrCurrentActivity().getClass());
+            PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intent2, 0);
+            remoteViews.setOnClickPendingIntent(R.id.root, pendingIntent2);
+
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
         }
     }

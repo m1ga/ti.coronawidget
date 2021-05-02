@@ -48,8 +48,6 @@ Scan the QR code or go to the <a href="https://github.com/m1ga/ti.coronawidget/r
 * start the app
 * set places and press "Force update"
 
-**Note**
-_No F-Droid version yet._
 
 ## Known issues
 
@@ -75,6 +73,11 @@ appc ti build -p android
 
 ## 🚨 Attention
 _Android only!_ For iOS you can use Scriptable with https://gist.github.com/kevinkub/46caebfebc7e26be63403a7f0587f664 by @kevinkub (https://github.com/kevinkub)
+
+## Sources
+
+* RKI data: https://npgeo-corona-npgeo-de.hub.arcgis.com
+* Vaccination data: https://rki-vaccination-data.vercel.app/
 
 
 ## Author

@@ -26,11 +26,12 @@ function updatePreview() {
 	hideLoading()
 }
 
-function showLoading(){
+function showLoading() {
 	$.view_loading.show();
 	$.activity.show();
 }
-function hideLoading(){
+
+function hideLoading() {
 	$.view_loading.hide();
 	$.activity.hide();
 }
@@ -73,4 +74,10 @@ function onClickSave(e) {
 
 	Ti.App.Properties.setString("icon", $.tf_icon.value);
 	require("/widget").updateData(updatePreview);
+}
+
+function onClickClose(e) {
+	Titanium.Android.stopService(intent);
+	$.index.exitOnClose = true;
+	$.index.close();
 }

@@ -1,4 +1,4 @@
-Ti.API.info("@@@ Service started.");
+Ti.API.debug("Service started.");
 require("/widget").updateData();
 
 if (Ti.Platform.Android.API_LEVEL >= 26) {

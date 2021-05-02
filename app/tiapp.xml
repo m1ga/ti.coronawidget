@@ -55,9 +55,8 @@
 	<deployment-targets>
 		<target device="android">true</target>
 	</deployment-targets>
-	<sdk-version>9.2.2.GA</sdk-version>
+	<sdk-version>10.0.0</sdk-version>
 	<plugins>
 		<plugin version="1.0">ti.alloy</plugin>
 	</plugins>
-	<property name="appc-app-id" type="string">5f739fbd06fd3c7e51480352</property>
 </ti:app>
