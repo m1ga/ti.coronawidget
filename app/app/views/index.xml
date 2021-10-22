@@ -41,7 +41,6 @@
 			<View id="view_button_row">
 				<Button id="btn_save" titleid="save" onClick="onClickSave"></Button>
 				<Button id="btn_force" titleid="update" onClick="onClickUpdate"></Button>
-				<Button id="btn_close" titleid="close" onClick="onClickClose"></Button>
 			</View>
 		</ScrollView>
 		<View id="view_loading">

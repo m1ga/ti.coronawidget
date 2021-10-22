@@ -1,21 +1,21 @@
-var widgets = require("ti.widget");
+// var widgets = require("ti.widget");
+var widget = require("/widget");
 
 $.index.open();
 
 function onClickUpdate(e) {
 	showLoading();
-	require("/widget").updateData(updatePreview);
+	widget.updateData(updatePreview);
 }
 
-var MINUTES = 60 * 30 * 1000;
-var intent = Titanium.Android.createServiceIntent({
-	url: 'service.js'
-});
-intent.putExtra('interval', MINUTES);
-Titanium.Android.startService(intent);
+// var MINUTES = 60 * 30 * 1000;
+// var intent = Titanium.Android.createServiceIntent({
+// 	url: 'service.js'
+// });
+// intent.putExtra('interval', MINUTES);
+// Titanium.Android.startService(intent);
 
 function updatePreview() {
-
 	var widgetData = Ti.App.Properties.getObject("widgetData", {
 		value1: "-",
 		value2: "-"
@@ -23,7 +23,7 @@ function updatePreview() {
 
 	$.lbl_preview1.text = Ti.App.Properties.getString("town1", "Berlin") + ": " + widgetData.value1;
 	$.lbl_preview2.text = Ti.App.Properties.getString("town2", "Munich") + ": " + widgetData.value2;
-	hideLoading()
+	hideLoading();
 }
 
 function showLoading() {
@@ -58,7 +58,7 @@ function onOpen(e) {
 	$.tf_icon.value = Ti.App.Properties.getString("icon", "🦠");
 
 	showLoading();
-	require("/widget").updateData(updatePreview);
+	widget.updateData(updatePreview);
 }
 
 function onClickSave(e) {
@@ -73,11 +73,11 @@ function onClickSave(e) {
 	if ($.tf_lon2.value != "") Ti.App.Properties.setString("lon2", $.tf_lon2.value);
 
 	Ti.App.Properties.setString("icon", $.tf_icon.value);
-	require("/widget").updateData(updatePreview);
+	widget.updateData(updatePreview);
 }
 
-function onClickClose(e) {
-	Titanium.Android.stopService(intent);
-	$.index.exitOnClose = true;
-	$.index.close();
-}
+// function onClickClose(e) {
+// 	Titanium.Android.stopService(intent);
+// 	$.index.exitOnClose = true;
+// 	$.index.close();
+// }

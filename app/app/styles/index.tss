@@ -1,6 +1,6 @@
 "Window" : {
 	backgroundColor: "windowBackgroundColor",
-	exitOnClose: false
+	exitOnClose: true
 }
 ".content" : {
 	width: 260,

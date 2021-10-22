@@ -1,10 +1,11 @@
 var widgets = require("ti.widget");
 var moment = require("alloy/moment");
-
+var downloadCount = 0;
 var widgetData = Ti.App.Properties.getObject("widgetData", {
 	value1: "-",
 	value2: "-"
-})
+});
+var clbFn = null;
 
 // get previous values
 var town1 = Ti.App.Properties.getString("town1", "-");
@@ -39,17 +40,11 @@ function downloadData(data) {
 					widgetData.updateTime2 = "Stand: " + json.features[0].attributes.last_update.split(", ")[0];
 				}
 				Ti.App.Properties.setObject("widgetData", widgetData);
-				if (data.callback) {
-					data.callback();
-				}
 			}
-
-			widgets.updateWidgets();
+			callCallback();
 		},
 		onerror: function(e) {
-			if (data.callback) {
-				data.callback();
-			}
+			callCallback();
 		},
 		timeout: 5000
 	});
@@ -57,18 +52,29 @@ function downloadData(data) {
 	xhr.send();
 }
 
+function callCallback() {
+	downloadCount++;
+	if (downloadCount >= 3) {
+		widgets.updateWidgets();
+		downloadCount = 0;
+		if (clbFn) clbFn();
+	}
+}
+
 function downloadVaccinationData() {
-	const locationUrl = "https://rki-vaccination-data.vercel.app/api"
+	const locationUrl = "https://rki-vaccination-data.vercel.app/api/v2/"
 
 	var xhr = Ti.Network.createHTTPClient({
 		onload: function(e) {
-			var json = JSON.parse(this.responseText);
-			widgetData.vaccinationOnce = "1. Impf: " + parseFloat(json.quote).toFixed(1) + "%";
-			widgetData.vaccinationTwice = "2. Impf: " + (parseFloat(json["2nd_vaccination"].vaccinated) / 83703925 * 100).toFixed(1) + "%";
+			var json = JSON.parse(this.responseText).data;
+			widgetData.vaccinationOnce = "1. Impf: " + parseFloat(json[17].vaccinatedAtLeastOnce.quote).toFixed(1) + "%";
+			widgetData.vaccinationTwice = "2. Impf: " + parseFloat(json[17].fullyVaccinated.quote).toFixed(1) + "%";
 
-			widgets.updateWidgets();
+			callCallback();
 		},
-		onerror: function(e) {},
+		onerror: function(e) {
+			callCallback();
+		},
 		timeout: 5000
 	});
 	xhr.open('GET', locationUrl);
@@ -76,7 +82,7 @@ function downloadVaccinationData() {
 }
 
 function getData(clb) {
-
+	clbFn = clb;
 	if (Ti.Network.online) {
 		town1 = Ti.App.Properties.getString("town1", "-");
 		town2 = Ti.App.Properties.getString("town2", "-");
@@ -85,14 +91,12 @@ function getData(clb) {
 		downloadData({
 			lon: Ti.App.Properties.getString("lon1", "13.404954"),
 			lat: Ti.App.Properties.getString("lat1", "52.520008"),
-			target: 1,
-			callback: clb
+			target: 1
 		});
 		downloadData({
 			lon: Ti.App.Properties.getString("lon2", "13.404954"),
 			lat: Ti.App.Properties.getString("lat2", "52.520008"),
-			target: 2,
-			callback: clb
+			target: 2
 		});
 		downloadVaccinationData();
 	}

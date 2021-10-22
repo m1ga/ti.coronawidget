@@ -1,9 +1,8 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-		android:minWidth="200dp"
-	    android:minHeight="30dp"
-	    android:updatePeriodMillis="1800000"
-	    android:initialLayout="@layout/appwidget2x1"
-	    android:resizeMode="horizontal|vertical"
-	    android:widgetCategory="home_screen|keyguard"
-	    android:previewImage="@drawable/preview">
-</appwidget-provider>
+    android:initialLayout="@layout/appwidget2x1"
+    android:minWidth="200dp"
+    android:minHeight="30dp"
+    android:previewImage="@drawable/preview"
+    android:resizeMode="horizontal|vertical"
+    android:updatePeriodMillis="1800000"
+    android:widgetCategory="home_screen|keyguard"></appwidget-provider>

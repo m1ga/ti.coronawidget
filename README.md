@@ -56,19 +56,18 @@ There are still some bugs and features that could be implemented:
 
 ## 🛠 Build
 
-The App is created with <a href="https://www.appcelerator.com/mobile-app-development-products/">Appcelerator Titanium</a>. In order to build the app you will need to install the toolchain first. Have a look at my <a href="https://github.com/m1ga/from_zero_to_app/blob/master/installation.md">installation tutorial</a> from <a href="https://github.com/m1ga/from_zero_to_app">From zero to app</a> or at the official <a href="https://www.appcelerator.com/">Appcelerator</a> page.
+The App is created with <a href="https://www.titaniumsdk.com/">Appcelerator Titanium</a>. In order to build the app you will need to install the toolchain first. Have a look at my <a href="https://github.com/m1ga/from_zero_to_app/blob/master/installation.md">installation tutorial</a> from <a href="https://github.com/m1ga/from_zero_to_app">From zero to app</a>.
 
 ### Widget
 
 go to the `widget/android/` folder and run
-```appc ti build -p android --build-only```
+``` ti build -p android --build-only```
 
 ### App
 
 go to the `app/` folder and run
 ```bash
-appc new --import --no-services
-appc ti build -p android
+ti build -p android
 ```
 
 ## 🚨 Attention

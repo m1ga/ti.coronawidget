@@ -8,20 +8,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.widget.RemoteViews;
 
+import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.TiApplication;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class WidgetProvider2x1 extends AppWidgetProvider {
 
-	@Override
+    @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int count = appWidgetIds.length;
-
         // get text from app/shared preferences
         String value1 = "-";
         String value2 = "-";
-		String town1 = "-";
+        String town1 = "-";
         String town2 = "-";
         String updateTime1 = "-";
         String updateTime2 = "-";
@@ -33,7 +33,7 @@ public class WidgetProvider2x1 extends AppWidgetProvider {
             JSONObject appData = new JSONObject(appString);
             value1 = appData.getString("value1");
             value2 = appData.getString("value2");
-			town1 = appData.getString("town1");
+            town1 = appData.getString("town1");
             town2 = appData.getString("town2");
             updateTime1 = appData.getString("updateTime1");
             updateTime2 = appData.getString("updateTime2");
@@ -46,7 +46,6 @@ public class WidgetProvider2x1 extends AppWidgetProvider {
         // update all widgets
         for (int i = 0; i < count; i++) {
             int widgetId = appWidgetIds[i];
-
             // get view
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.appwidget2x1);
 
@@ -67,13 +66,11 @@ public class WidgetProvider2x1 extends AppWidgetProvider {
             Intent intent = new Intent(context, WidgetProvider2x1.class);
             intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
             // start app on click
             Intent intent2 = new Intent(context, TiApplication.getAppRootOrCurrentActivity().getClass());
-            PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intent2, 0);
+            PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intent2, PendingIntent.FLAG_IMMUTABLE);
             remoteViews.setOnClickPendingIntent(R.id.root, pendingIntent2);
-
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
         }
     }
