@@ -2,7 +2,7 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
 	<id>com.miga.coronawidget</id>
 	<name>Corona Widget</name>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 	<publisher>Michael Gangolf</publisher>
 	<url>https://migaweb.de</url>
 	<description/>
