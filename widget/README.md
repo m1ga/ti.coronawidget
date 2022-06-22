@@ -1,6 +1,6 @@
 # Appcelerator Titanium Android Widget
 
-Based on https://github.com/m1ga/ti.widget
+Based on https://github.com/hansemannn/titanium-widget-kit
 
 ## Send text to the widget:
 ```javascript
